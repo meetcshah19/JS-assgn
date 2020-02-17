@@ -206,22 +206,22 @@ function pause() {
 function store() {
     maze.src = "res/" + Math.ceil((Math.random() * 500)).toString();
     console.log(typeof localStorage.getItem('data'));
-    var xyz;
+    var data;
     if (localStorage.getItem('data') != null) {
-        xyz = JSON.parse(localStorage.getItem('data'));
+        data = JSON.parse(localStorage.getItem('data'));
     } else {
-        xyz = new Array();
+        data = new Array();
     }
-    console.log(xyz);
-    xyz.push({ k: document.getElementById('namets').value, v: time });
-    xyz.sort((a, b) => a.v - b.v);
-    localStorage.setItem('data', JSON.stringify(xyz));
+    
+    data.push({ k: document.getElementById('namets').value, v: time });
+    data.sort((a, b) => a.v - b.v);
+    localStorage.setItem('data', JSON.stringify(data));
 
     document.getElementById('startscreen').style.display = "flex";
     document.getElementById('name').style.display = "none";
     time = 0;
 }
-function lb() {
+function showLeaderboard() {
     document.getElementById('startscreen').style.display = "none";
     var data = JSON.parse(localStorage.getItem('data'));
     var ins = '';
@@ -246,7 +246,6 @@ function exit() {
 }
 window.addEventListener('keydown', click, true);
 
-alert(1);
 
 
 
