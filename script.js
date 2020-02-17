@@ -42,9 +42,9 @@ function draw() {
 
     // var maze = document.getElementById('maze');
     ctx.drawImage(maze, 0, 0, 922, 922);
-    
-    
-    
+
+
+
     var data = ctx.getImageData(20, 20, 882, 1).data;
     ctx.fillStyle = "red";
     var c = 0;
@@ -246,6 +246,7 @@ function exit() {
 }
 window.addEventListener('keydown', click, true);
 
+alert(1);
 
 
 
